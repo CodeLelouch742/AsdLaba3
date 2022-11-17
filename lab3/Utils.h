@@ -2,12 +2,13 @@
 #include <chrono>
 #include <Windows.h>
 #include <cstdlib>
+#include <algorithm>
 
 void showArr(float* arr, int length);
 
 using namespace std;
 
-void copy_arr(float* arr, float* bufArr,int length)
+void copyArr(float* arr, float* bufArr,int length)
 {
     for (int i = 0; i < length; i++)
     {
@@ -72,7 +73,7 @@ void bubbleSort(float* arr,int length)
 
 
 /* Реализация сортировки слиянием */
-void merge(float* arr, int l, int m, int r)//O(n)
+void merge(float* arr, int l, int m, int r)
 {
     int i = 0, j = 0, k = l;
     int n1 = m - l + 1;

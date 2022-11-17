@@ -55,7 +55,7 @@ int main()
     }
     cout << "Введите 1, если нужно выводить отсортированные массивы, иначе введите другое значение.\n";
     cin >> show;
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
     /* Подсчёт и вывод времени для сортировки вставками */
     //showArr(tempArr,length);
@@ -66,7 +66,7 @@ int main()
 	cout << "Время InsertionSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-    copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
     /* Подсчёт и вывод времени для сортировки выбором */
     //showArr(tempArr,length);
@@ -77,7 +77,7 @@ int main()
 	cout << "Время SelectionSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
 
     /* Подсчёт и вывод времени для сортировки пузырьком */
@@ -89,7 +89,7 @@ int main()
 	cout << "Время BubbleSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
     /* Подсчёт и вывод времени для сортировки слиянием */
     //showArr(tempArr,length);
@@ -100,7 +100,7 @@ int main()
 	cout << "Время MergeSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
     /* Подсчёт и вывод времени для сортировки Шелла */
     //showArr(tempArr,length);
@@ -111,7 +111,7 @@ int main()
 	cout << "Время ShellSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
 
     /* Подсчёт и вывод времени для быстрой сортировки */
     //showArr(tempArr,length);
@@ -122,7 +122,18 @@ int main()
 	cout << "Время QuickSort: " << duration.count() << " мс\n";
     if(show == 1)
         showArr(tempArr,length);
-	copy_arr(arr, tempArr, length);
+    copyArr(arr, tempArr, length);
+
+    /* Подсчёт и вывод времени для стандартной сортировки */
+    //showArr(tempArr,length);
+    start = chrono::high_resolution_clock::now();
+    sort(tempArr,tempArr+length);
+    end = chrono::high_resolution_clock::now();
+    duration = end - start;
+    cout << "Время Sort: " << duration.count() << " мс\n";
+    if(show == 1)
+        showArr(tempArr,length);
+    copyArr(arr, tempArr, length);
 
     system("pause");
     return 0;
